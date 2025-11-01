@@ -3,10 +3,12 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: github.com/btwseeu78/buf/gen
+      value: github.com/btwseeu78/buff/gen
   disable:
     - file_option: go_package
       module: buf.build/bufbuild/protovalidate
+    - file_option: go_package
+      module: buf.build/googleapis/googleapis
 
 plugins:
   - remote: buf.build/protocolbuffers/go
@@ -17,5 +19,10 @@ plugins:
     opt:
       - paths=source_relative
       - simple
+  - remote: buf.build/bufbuild/plugins/openapi
+    out: gen/openapi
+    opt:
+      - fqn_for_openapi_name=true
+      - json_names_for_fields=true
 inputs:
-  - directory: proto
+  - directory: proto 

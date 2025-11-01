@@ -8,7 +8,7 @@ package petv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_type "github.com/btwseeu78/buf/gen/google/type"
+	datetime "google.golang.org/genproto/googleapis/type/datetime"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -85,7 +85,7 @@ type Pet struct {
 	PetType       PetType                `protobuf:"varint,1,opt,name=pet_type,json=petType,proto3,enum=pet.v1.PetType" json:"pet_type,omitempty"`
 	PetId         string                 `protobuf:"bytes,2,opt,name=pet_id,json=petId,proto3" json:"pet_id,omitempty"`
 	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	CreatedAt     *_type.DateTime        `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	CreatedAt     *datetime.DateTime     `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -141,7 +141,7 @@ func (x *Pet) GetName() string {
 	return ""
 }
 
-func (x *Pet) GetCreatedAt() *_type.DateTime {
+func (x *Pet) GetCreatedAt() *datetime.DateTime {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -444,9 +444,9 @@ const file_pet_v1_petservice_proto_rawDesc = "" +
 	"\x0fPetStoreService\x129\n" +
 	"\x06GetPet\x12\x15.pet.v1.GetPetRequest\x1a\x16.pet.v1.GetPetResponse\"\x00\x129\n" +
 	"\x06PutPet\x12\x15.pet.v1.PutPetRequest\x1a\x16.pet.v1.PutPetResponse\"\x00\x12B\n" +
-	"\tDeletePet\x12\x18.pet.v1.DeletePetRequest\x1a\x19.pet.v1.DeletePetResponse\"\x00B\x81\x01\n" +
+	"\tDeletePet\x12\x18.pet.v1.DeletePetRequest\x1a\x19.pet.v1.DeletePetResponse\"\x00B\x82\x01\n" +
 	"\n" +
-	"com.pet.v1B\x0fPetserviceProtoP\x01Z)github.com/btwseeu78/buf/gen/pet/v1;petv1\xa2\x02\x03PXX\xaa\x02\x06Pet.V1\xca\x02\x06Pet\\V1\xe2\x02\x12Pet\\V1\\GPBMetadata\xea\x02\aPet::V1b\x06proto3"
+	"com.pet.v1B\x0fPetserviceProtoP\x01Z*github.com/btwseeu78/buff/gen/pet/v1;petv1\xa2\x02\x03PXX\xaa\x02\x06Pet.V1\xca\x02\x06Pet\\V1\xe2\x02\x12Pet\\V1\\GPBMetadata\xea\x02\aPet::V1b\x06proto3"
 
 var (
 	file_pet_v1_petservice_proto_rawDescOnce sync.Once
@@ -471,7 +471,7 @@ var file_pet_v1_petservice_proto_goTypes = []any{
 	(*PutPetResponse)(nil),    // 5: pet.v1.PutPetResponse
 	(*DeletePetRequest)(nil),  // 6: pet.v1.DeletePetRequest
 	(*DeletePetResponse)(nil), // 7: pet.v1.DeletePetResponse
-	(*_type.DateTime)(nil),    // 8: google.type.DateTime
+	(*datetime.DateTime)(nil), // 8: google.type.DateTime
 }
 var file_pet_v1_petservice_proto_depIdxs = []int32{
 	0, // 0: pet.v1.Pet.pet_type:type_name -> pet.v1.PetType
